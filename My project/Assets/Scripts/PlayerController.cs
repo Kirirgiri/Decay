@@ -6,11 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     // Public variables to adjust in the Unity Inspector
     public float moveSpeed = 5f;
-    public float jumpForce = 10f;
+    public float jumpForce = 1f;
 
     // Private variables
     private Rigidbody2D rb;
-    private bool isGrounded = true;
 
     // Start is called before the first frame update
     void Start()
@@ -26,19 +25,18 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
 
         // Handle jumping
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            isGrounded = false; // Player is in the air
         }
     }
     
     // Check if the player is touching the ground
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Pipe"))
         {
-            isGrounded = true; // Player is back on the ground
+            Destroy(gameObject);
         }
     }
 }
