@@ -3,19 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Activities : MonoBehaviour
+public class SleepActivity : MonoBehaviour
 {
-    private Button btn;
-
     [SerializeField] private Image darkness;
+    [SerializeField] private GameManager _gameManager;
     
     public float fadeDuration = 2f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        btn = GetComponent<Button>();
-    }
-
+    
     public void GoSleep()
     {
         StartCoroutine(Sleep());
@@ -25,7 +19,9 @@ public class Activities : MonoBehaviour
     {
         // Fade in
         yield return StartCoroutine(FadeTo(1f, fadeDuration));
-
+        
+        _gameManager.timeCounter++;
+        
         // Fade out
         yield return StartCoroutine(FadeTo(0f, fadeDuration));
     }
