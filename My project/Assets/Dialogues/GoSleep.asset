@@ -10,10 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5b0e951e794a584ba45b05d3dfe4162, type: 3}
-  m_Name: TestDialogue
+  m_Name: GoSleep
   m_EditorClassIdentifier: 
   dialogueLines:
-  - dialogue: UWAAAAAAH~ What a good nap.
-  - dialogue: Damn, it's 9AM... That's too early.
-  - dialogue: Let me do something in the meantime...
-  - dialogue: ... or should I take a nap?
+  - dialogue: Let me go sleep then...
