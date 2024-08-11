@@ -6,11 +6,13 @@ public class EatSnacksActivity : MonoBehaviour
 {
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private MainManager _mainManager;
+    [SerializeField] private DialogueDisplayer _dialogueManager;
     [SerializeField] private GameObject nachos;
 
-    public void EatSnacks()
+    private void OnMouseDown()
     {
         _mainManager.levelOfBedrot++;
+        _dialogueManager.GetComponent<DialogueManager>().SwitchDialogue(2);
         EatNachos();
     }
 

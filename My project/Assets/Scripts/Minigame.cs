@@ -7,26 +7,22 @@ public class Minigame : MonoBehaviour
     public GameObject minigame;
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private MainManager _mainManager;
-    [SerializeField] private GameObject[] buttons;
-    public void PlayFlappy()
+    [SerializeField] private DialogueDisplayer _dialogueManager;
+    [SerializeField] private GameObject scoreVisibility;
+    public int highScore;
+    private void OnMouseDown()
     {
         minigame.SetActive(true);
+        highScore = 0;
+        scoreVisibility.SetActive(true);
         _mainManager.levelOfBedrot++;
-        for (int i = 0; i < buttons.Length; i++)
-        {
-            buttons[i].SetActive(false);
-        }
-        
     }
 
     public void EndFlappy()
     {
-        for (int i = 0; i < buttons.Length; i++)
-        {
-            buttons[i].SetActive(true);
-        }
-
+        scoreVisibility.SetActive(false);
         _gameManager.timeCounter++;
+        _dialogueManager.GetComponent<DialogueManager>().SwitchDialogue(3);
         minigame.SetActive(false);
     }
     

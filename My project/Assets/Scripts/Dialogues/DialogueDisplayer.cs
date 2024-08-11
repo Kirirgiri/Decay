@@ -11,8 +11,6 @@ public class DialogueDisplayer : MonoBehaviour
     [SerializeField] private TMP_Text dialogueText;
     public float typingSpeed = 0.05f; // Time in seconds between each letter
 
-    [SerializeField] private GameObject barrier;
-
     private IEnumerator MoveThroughDialogue(DialogueObject dialogueObject)
     {
         dialogueBox.SetActive(true);
@@ -27,7 +25,6 @@ public class DialogueDisplayer : MonoBehaviour
                     yield return null;
             }
         dialogueBox.SetActive(false);
-        //barrier.SetActive(false);
     }
     private IEnumerator TypeText(string dialogue)
     {

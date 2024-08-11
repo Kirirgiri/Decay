@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
 
     [SerializeField] private GameObject btn;
+    [SerializeField] private TMP_Text score;
     public bool gameOver = false;
 
     // Start is called before the first frame update
@@ -43,6 +46,15 @@ public class PlayerController : MonoBehaviour
         {
             gameOver = true;
             btn.GetComponent<Minigame>().EndFlappy();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("scoreAdd"))
+        {
+            var highscore = btn.GetComponent<Minigame>().highScore++;
+            score.SetText("Score:"+highscore);
         }
     }
 }

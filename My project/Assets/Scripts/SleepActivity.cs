@@ -12,7 +12,7 @@ public class SleepActivity : MonoBehaviour
     public float fadeDuration = 2f;
     private bool sleepActive = false;
     
-    public void OnMouseDown()
+    private void OnMouseDown()
     {
         StartCoroutine(Sleep());
         _dialogueManager.GetComponent<DialogueManager>().SwitchDialogue(1);
