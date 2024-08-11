@@ -9,6 +9,7 @@ public class SleepActivity : MonoBehaviour
     [SerializeField] private GameManager _gameManager;
     
     public float fadeDuration = 2f;
+    private bool sleepActive = false;
     
     public void GoSleep()
     {
@@ -17,13 +18,16 @@ public class SleepActivity : MonoBehaviour
 
     IEnumerator Sleep()
     {
-        // Fade in
-        yield return StartCoroutine(FadeTo(1f, fadeDuration));
+        if (!sleepActive)
+        {
+            // Fade in
+            yield return StartCoroutine(FadeTo(1f, fadeDuration));
         
-        _gameManager.timeCounter++;
+            _gameManager.timeCounter++;
         
-        // Fade out
-        yield return StartCoroutine(FadeTo(0f, fadeDuration));
+            // Fade out
+            yield return StartCoroutine(FadeTo(0f, fadeDuration));
+        }
     }
 
     IEnumerator FadeTo(float targetAlpha, float duration)
