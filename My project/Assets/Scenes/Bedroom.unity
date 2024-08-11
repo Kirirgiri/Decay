@@ -2017,7 +2017,7 @@ Transform:
   m_GameObject: {fileID: 950949534}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0.25643468, w: 0.9665616}
-  m_LocalPosition: {x: -1515.07, y: -314.56, z: 0}
+  m_LocalPosition: {x: -1511.3, y: -317.6, z: 0}
   m_LocalScale: {x: 1.9896369, y: 1.9896369, z: 1.9896371}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2065,7 +2065,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: -315190574, guid: e03c558ed50ce7b4f8484de730b89d64, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8745098, g: 0.8862745, b: 0.99607843, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2486,6 +2486,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1474427656}
+  - component: {fileID: 1474427657}
   m_Layer: 5
   m_Name: Eating Snacks
   m_TagString: Untagged
@@ -2514,6 +2515,27 @@ RectTransform:
   m_AnchoredPosition: {x: 576, y: 516}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1474427657
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474427655}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0437a93d1fd2a0d4a86af8b3b53d112e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1552409154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3859,13 +3881,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1964897437}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.14446859, w: 0.98950946}
-  m_LocalPosition: {x: -1496.57, y: -334.66, z: 0}
-  m_LocalScale: {x: 1.9896369, y: 1.9896369, z: 1.9896371}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: -0, y: -0, z: -0.16734287, w: 0.9858988}
+  m_LocalPosition: {x: -1497.38, y: -333.99, z: 0}
+  m_LocalScale: {x: 1.7038243, y: 1.7038243, z: 1.7038244}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1474427656}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -16.613}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -19.267}
 --- !u!212 &1964897439
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3908,7 +3930,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: -853845370, guid: 424ba6f524f5a07479d55a227a0f4475, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.874482, g: 0.8836362, b: 0.9924528, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

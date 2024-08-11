@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: EatSnacks
   m_EditorClassIdentifier: 
   dialogueLines:
-  - dialogue: I forgot I still had nachos.
+  - dialogue: I forgot I ate the pizza already. Nachos it is.
   - dialogue: MMHMHmHmmhmh......yummy
