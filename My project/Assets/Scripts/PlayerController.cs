@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("scoreAdd"))
         {
-            var highscore = btn.GetComponent<Minigame>().highScore++;
+            var highscore = btn.GetComponent<Minigame>().highScore + 1;
             score.SetText("Score:"+highscore);
         }
     }

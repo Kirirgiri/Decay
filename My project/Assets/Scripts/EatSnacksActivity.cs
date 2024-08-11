@@ -21,7 +21,7 @@ public class EatSnacksActivity : MonoBehaviour
         nachos.SetActive(true);
         yield return new WaitForSeconds(6f);
         nachos.SetActive(false);
-        _gameManager.timeCounter++;
+        _gameManager.timeCounter+=2;
     }
 
     private void EatNachos()

@@ -10,6 +10,12 @@ public class DialogueDisplayer : MonoBehaviour
     public GameObject dialogueBox;
     [SerializeField] private TMP_Text dialogueText;
     public float typingSpeed = 0.05f; // Time in seconds between each letter
+    private AudioSource typingSound;
+
+    private void Start()
+    {
+        typingSound = GetComponent<AudioSource>();
+    }
 
     private IEnumerator MoveThroughDialogue(DialogueObject dialogueObject)
     {
@@ -17,7 +23,7 @@ public class DialogueDisplayer : MonoBehaviour
             for(int i = 0; i < dialogueObject.dialogueLines.Length; i++)
             {
                     dialogueText.text = dialogueObject.dialogueLines[i].dialogue;
-            
+                    typingSound.Play();
                     StartCoroutine(TypeText(dialogueText.text));
                     //The following line of code makes it so that the for loop is paused until the user clicks the left mouse button.
                     yield return new WaitForSeconds(3f);
@@ -25,6 +31,7 @@ public class DialogueDisplayer : MonoBehaviour
                     yield return null;
             }
         dialogueBox.SetActive(false);
+        typingSound.Stop();
     }
     private IEnumerator TypeText(string dialogue)
     {

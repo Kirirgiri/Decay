@@ -21,7 +21,7 @@ public class Minigame : MonoBehaviour
     public void EndFlappy()
     {
         scoreVisibility.SetActive(false);
-        _gameManager.timeCounter++;
+        _gameManager.timeCounter+=2;
         _dialogueManager.GetComponent<DialogueManager>().SwitchDialogue(3);
         minigame.SetActive(false);
     }

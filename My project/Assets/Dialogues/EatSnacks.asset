@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: EatSnacks
   m_EditorClassIdentifier: 
   dialogueLines:
-  - dialogue: I'm hungry...
-  - dialogue: Let me grab some nachos. It's been a while.
+  - dialogue: I forgot I still had nachos.
+  - dialogue: MMHMHmHmmhmh......yummy

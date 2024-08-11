@@ -25,7 +25,7 @@ public class SleepActivity : MonoBehaviour
             // Fade in
             yield return StartCoroutine(FadeTo(1f, fadeDuration));
         
-            _gameManager.timeCounter++;
+            _gameManager.timeCounter+=2;
         
             // Fade out
             yield return StartCoroutine(FadeTo(0f, fadeDuration));
