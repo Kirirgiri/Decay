@@ -10,16 +10,13 @@ public class DialogueDisplayer : MonoBehaviour
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TMP_Text dialogueText;
     public float typingSpeed = 0.05f; // Time in seconds between each letter
-
-    private bool skipLineTriggered = false;
+    
     
 
     private IEnumerator MoveThroughDialogue(DialogueObject dialogueObject)
     {
             for(int i = 0; i < dialogueObject.dialogueLines.Length; i++)
             {
-                if (!skipLineTriggered)
-                {
                     dialogueText.text = dialogueObject.dialogueLines[i].dialogue;
             
                     StartCoroutine(TypeText(dialogueText.text));
@@ -27,7 +24,6 @@ public class DialogueDisplayer : MonoBehaviour
                     yield return new WaitForSeconds(3f);
                     //The following line of codes make the coroutine wait for a frame so as the next WaitUntil is not skipped
                     yield return null;
-                }
             }
         dialogueBox.SetActive(false);
     }
