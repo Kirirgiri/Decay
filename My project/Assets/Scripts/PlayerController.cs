@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +12,9 @@ public class PlayerController : MonoBehaviour
 
     // Private variables
     private Rigidbody2D rb;
+
+    [SerializeField] private GameObject btn;
+    public bool gameOver = false;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +41,8 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Pipe"))
         {
-            Destroy(gameObject);
+            gameOver = true;
+            btn.GetComponent<Minigame>().EndFlappy();
         }
     }
 }

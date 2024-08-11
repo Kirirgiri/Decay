@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class Minigame : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject minigame;
+    [SerializeField] private GameManager _gameManager;
+    [SerializeField] private GameObject[] buttons;
+    public void PlayFlappy()
     {
+        minigame.SetActive(true);
+        _gameManager.levelOfBrainrot++;
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].SetActive(false);
+        }
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void EndFlappy()
     {
-        
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].SetActive(true);
+        }
+
+        _gameManager.timeCounter++;
+        minigame.SetActive(false);
     }
+    
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -19,11 +20,11 @@ public class GameManager : MonoBehaviour
     private float elapsedTime = 0f;
     private float progressDuration = 0.1f; // Example duration for change
 
-    private string[] timeslots;
     // Start is called before the first frame update
     void Start()
     {
         UpdateTimeDisplay(startHours, startMinutes);
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void Update()
@@ -67,7 +68,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Touch some grass");
         }
-        
-        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    
 }
