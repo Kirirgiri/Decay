@@ -17,10 +17,9 @@ public class EatSnacksActivity : MonoBehaviour
     private IEnumerator EatingNachos(GameObject nachos)
     {
         nachos.SetActive(true);
-        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+        yield return new WaitForSeconds(6f);
         nachos.SetActive(false);
         _gameManager.timeCounter++;
-        yield return null;
     }
 
     private void EatNachos()
