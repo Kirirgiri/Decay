@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         UpdateTimeDisplay(startHours, startMinutes);
-        DontDestroyOnLoad(this.gameObject);
     }
 
     private void Update()
@@ -57,17 +56,6 @@ public class GameManager : MonoBehaviour
 
     private void AnalyzeBrainrot()
     {
-        if (levelOfBrainrot < 5)
-        {
-            Debug.Log("Congrats, you actually feel refreshed! Groggy, but refreshed");
-        }else if (levelOfBrainrot < 7)
-        {
-            Debug.Log("You might need to touch some grass");
-        }
-        else
-        {
-            Debug.Log("Touch some grass");
-        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     

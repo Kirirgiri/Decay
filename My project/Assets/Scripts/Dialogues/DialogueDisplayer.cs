@@ -6,10 +6,17 @@ using UnityEngine;
 
 public class DialogueDisplayer : MonoBehaviour
 {
+    public static DialogueDisplayer instance;
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TMP_Text dialogueText;
     public DialogueObject currentDialogue;
     public float typingSpeed = 0.05f; // Time in seconds between each letter
+
+    private void Awake()
+    {
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     private void Start()
     {

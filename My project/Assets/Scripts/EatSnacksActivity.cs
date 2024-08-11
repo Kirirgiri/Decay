@@ -5,11 +5,12 @@ using UnityEngine;
 public class EatSnacksActivity : MonoBehaviour
 {
     [SerializeField] private GameManager _gameManager;
+    [SerializeField] private MainManager _mainManager;
     [SerializeField] private GameObject nachos;
 
     public void EatSnacks()
     {
-        _gameManager.levelOfBrainrot++;
+        _mainManager.levelOfBedrot++;
         EatNachos();
     }
 
