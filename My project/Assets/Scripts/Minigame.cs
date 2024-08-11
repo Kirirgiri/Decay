@@ -10,8 +10,16 @@ public class Minigame : MonoBehaviour
     [SerializeField] private DialogueDisplayer _dialogueManager;
     [SerializeField] private GameObject scoreVisibility;
     public int highScore;
+
+    private AudioSource click;
+    
+    private void Start()
+    {
+        click = GetComponent<AudioSource>();
+    }
     private void OnMouseDown()
     {
+        click.Play();
         minigame.SetActive(true);
         highScore = 0;
         scoreVisibility.SetActive(true);

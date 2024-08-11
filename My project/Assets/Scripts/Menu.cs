@@ -10,7 +10,8 @@ public class Menu : MonoBehaviour
     public Button startButton;    // Button to start the game
     public Button quitButton;     // Button to quit the game
     public Button settingsButton; // Optional: Button to open settings
-    // Start is called before the first frame update
+    public Slider volume;
+    public Button back;
     void Start()
     {
         // Ensure the menu is active when the game starts
@@ -47,7 +48,6 @@ public class Menu : MonoBehaviour
 
     public void OpenSettings()
     {
-        // Here you would load a settings panel or scene
-        Debug.Log("Settings button pressed");
+        
     }
 }

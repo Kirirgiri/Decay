@@ -18,10 +18,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject btn;
     [SerializeField] private TMP_Text score;
     public bool gameOver = false;
+    private AudioSource jumpSound;
 
     // Start is called before the first frame update
     void Start()
     {
+        jumpSound = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
         // Handle jumping
         if (Input.GetButtonDown("Jump"))
         {
+            jumpSound.Play();
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
     }

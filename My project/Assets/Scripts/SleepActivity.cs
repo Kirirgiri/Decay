@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,9 +12,17 @@ public class SleepActivity : MonoBehaviour
     
     public float fadeDuration = 2f;
     private bool sleepActive = false;
-    
+
+    private AudioSource click;
+
+    private void Start()
+    {
+        click = GetComponent<AudioSource>();
+    }
+
     private void OnMouseDown()
     {
+        click.Play();
         StartCoroutine(Sleep());
         _dialogueManager.GetComponent<DialogueManager>().SwitchDialogue(1);
     }

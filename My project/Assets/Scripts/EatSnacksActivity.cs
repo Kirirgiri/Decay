@@ -9,6 +9,13 @@ public class EatSnacksActivity : MonoBehaviour
     [SerializeField] private DialogueDisplayer _dialogueManager;
     [SerializeField] private GameObject nachos;
 
+    private AudioSource crunch;
+    
+    private void Start()
+    {
+        crunch = GetComponent<AudioSource>();
+    }
+
     private void OnMouseDown()
     {
         _mainManager.levelOfBedrot++;
@@ -19,6 +26,7 @@ public class EatSnacksActivity : MonoBehaviour
     private IEnumerator EatingNachos(GameObject nachos)
     {
         nachos.SetActive(true);
+        crunch.Play();
         yield return new WaitForSeconds(6f);
         nachos.SetActive(false);
         _gameManager.timeCounter+=2;
