@@ -10,8 +10,7 @@ public class Menu : MonoBehaviour
     public Button startButton;    // Button to start the game
     public Button quitButton;     // Button to quit the game
     public Button settingsButton; // Optional: Button to open settings
-    public Slider volume;
-    public Button back;
+    [SerializeField] private GameObject[] settings;
     void Start()
     {
         // Ensure the menu is active when the game starts
@@ -41,13 +40,21 @@ public class Menu : MonoBehaviour
         Application.Quit();
         
         // If running in the Unity editor, stop playing
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #endif
     }
 
     public void OpenSettings()
     {
-        
+        settings[1].SetActive(false);
+        settings[0].SetActive(true);
     }
+    
+    public void GoBack()
+    {
+        settings[1].SetActive(true);
+        settings[0].SetActive(false);
+    }
+    
 }

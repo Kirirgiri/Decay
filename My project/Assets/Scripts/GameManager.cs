@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
             oldCounter = timeCounter;
         }
 
-        if (timeCounter > 10)
+        if (timeCounter > 20)
         {
             AnalyzeBrainrot();
         }
