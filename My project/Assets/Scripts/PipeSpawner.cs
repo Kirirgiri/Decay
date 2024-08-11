@@ -12,10 +12,9 @@ public class PipeSpawner : MonoBehaviour
 
     private float timer = 0f;
     
-    
-
     void Update()
     {
+        
         timer += Time.deltaTime;
 
         if (timer >= spawnRate)
