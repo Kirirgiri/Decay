@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         _dialogueDisplayer = GetComponent<DialogueDisplayer>();
+        _dialogueDisplayer.DisplayDialogue(_dialogueObjects[0]);
     }
 
     public void SwitchDialogue(int dialogueIndex)

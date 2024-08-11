@@ -12,6 +12,7 @@ public class DialogueDisplayer : MonoBehaviour
     public float typingSpeed = 0.05f; // Time in seconds between each letter
 
     private bool skipLineTriggered = false;
+    
 
     private IEnumerator MoveThroughDialogue(DialogueObject dialogueObject)
     {
@@ -44,13 +45,5 @@ public class DialogueDisplayer : MonoBehaviour
         dialogueBox.SetActive(true);
         StartCoroutine(MoveThroughDialogue(dialogueObject));
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            skipLineTriggered = true;
-            dialogueBox.SetActive(false);
-        }
-    }
+    
 }
