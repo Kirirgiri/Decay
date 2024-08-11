@@ -7,14 +7,15 @@ using UnityEngine;
 public class DialogueDisplayer : MonoBehaviour
 {
     public static DialogueDisplayer instance;
-    [SerializeField] private GameObject dialogueBox;
+    public GameObject dialogueBox;
     [SerializeField] private TMP_Text dialogueText;
     public float typingSpeed = 0.05f; // Time in seconds between each letter
-    
-    
+
+    [SerializeField] private GameObject barrier;
 
     private IEnumerator MoveThroughDialogue(DialogueObject dialogueObject)
     {
+        dialogueBox.SetActive(true);
             for(int i = 0; i < dialogueObject.dialogueLines.Length; i++)
             {
                     dialogueText.text = dialogueObject.dialogueLines[i].dialogue;
@@ -26,6 +27,7 @@ public class DialogueDisplayer : MonoBehaviour
                     yield return null;
             }
         dialogueBox.SetActive(false);
+        //barrier.SetActive(false);
     }
     private IEnumerator TypeText(string dialogue)
     {

@@ -7,13 +7,15 @@ public class SleepActivity : MonoBehaviour
 {
     [SerializeField] private Image darkness;
     [SerializeField] private GameManager _gameManager;
+    [SerializeField] private DialogueDisplayer _dialogueManager;
     
     public float fadeDuration = 2f;
     private bool sleepActive = false;
     
-    public void GoSleep()
+    public void OnMouseDown()
     {
         StartCoroutine(Sleep());
+        _dialogueManager.GetComponent<DialogueManager>().SwitchDialogue(1);
     }
 
     IEnumerator Sleep()

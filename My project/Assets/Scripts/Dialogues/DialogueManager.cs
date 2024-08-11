@@ -18,7 +18,7 @@ public class DialogueManager : MonoBehaviour
 
     public void SwitchDialogue(int dialogueIndex)
     {
-        if(dialogueIndex<_dialogueObjects.Length)
+        if(dialogueIndex<_dialogueObjects.Length && !_dialogueDisplayer.dialogueBox.activeSelf)
         {
             _dialogueDisplayer.DisplayDialogue(_dialogueObjects[dialogueIndex]);
         }
