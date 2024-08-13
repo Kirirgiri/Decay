@@ -1,6 +1,6 @@
 # Welcome to Bed Rot
 
-![Bed Rot Logo](../bed_rot_thumbnail.png)
+![Bed Rot Logo](./bed_rot_thumbnail.png)
 
 A game where you just rot in a bed for a day.
 
